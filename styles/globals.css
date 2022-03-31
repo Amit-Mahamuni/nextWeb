@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap'); */
 html,
 body {
   padding: 0;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  font-family: 'Nunito';
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: 'Nunito' !important;
+  font-weight: 500 !important; */
 }
 
 a {
@@ -33,7 +34,8 @@ a {
 
 .mainBanner{
   background-image: url("https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75");
-  height: 90vh;
+  height: 70vh;
+  min-height: max-content;
   background-size:cover ;
   background-position: center center;
   background-repeat: no-repeat;
@@ -52,26 +54,32 @@ a {
   z-index: 1;
 } */
 
-.container{
-  height: 90vh;
+.mainBanner .container{
+  height: 70vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  z-index: 10;
 }
 
-.mainBanner h1, .mainBanner p{
+.mainBanner h1,.mainBanner h4, .mainBanner p{
   color: #ffff;
+  font-weight: 600;
+}
+
+.mainBanner h1{
+  font-size: 3.5rem;
 }
 
 .homeBookingForm{
-position: absolute;
-bottom: 15%;
+/* position: absolute;
+bottom: 15%;*/
 min-width: 55vw;
-max-width: 90% ;
+max-width: 90% ; 
+margin-top: -50px;
+z-index: 10;
 }
 @media only screen and (max-width: 768px) {
-  .homeBookingForm{
+  /* .homeBookingForm{
      bottom: -10%;
-    }
+    } */
 }

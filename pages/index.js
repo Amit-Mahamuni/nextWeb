@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Container, Row, Col, Form, FloatingLabel, Button } from 'react-bootstrap';
+import NavBar from '../components/navbar';
 
 export default function Home() {
   return (
@@ -10,46 +11,77 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <NavBar />
       <main>
-        <div className="mainBanner">
-          <Container >
-            <div className='w-100'>
+        <section id="mainBannerSec">
+          <div className="mainBanner">
+            <Container >
               <Row>
-                <Col>
-                  <h1>Pawna Camping</h1>
+                <Col md={6}>
                   <p>Full Adventure & close to Nature</p>
+                  <h1>Pawna Camping</h1>
+                  <h4>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                  </h4>
                 </Col>
               </Row>
-              <div className='w-100 d-flex justify-content-center'>
-                <Form className='homeBookingForm px-4 p-3 bg-white rounded shadow-lg' >
-                  <Row className="g-4">
-                    <Col md={5}>
-                      <FloatingLabel
-                        controlId="floatingInput"
-                        label="Booking Date"
-                      >
-                        <Form.Control type="Date" placeholder="Booking Date" />
-                      </FloatingLabel>
-                    </Col>
-                    <Col md={4}>
-                      <FloatingLabel
-                        controlId="floatingInput"
-                        label="Number Person"
-                      >
-                        <Form.Control type="number" placeholder="Number Person" />
-                      </FloatingLabel>
-                    </Col>
-                    <Col md={3}>
-                      <Button variant="primary" type="submit" className='h-100 w-100 text-uppercase'>
-                        Book Now
-                      </Button>
-                    </Col>
-                  </Row>
-                </Form>
-              </div>
+            </Container>
+          </div>
+          <Container >
+            <div className='w-100 d-flex justify-content-center'>
+              <Form className='homeBookingForm px-4 p-3 bg-white rounded shadow-lg' >
+                <Row className="g-4">
+                  <Col md={5}>
+                    <FloatingLabel
+                      controlId="floatingInput"
+                      label="Booking Date"
+                    >
+                      <Form.Control type="Date" placeholder="Booking Date" min={new Date().toISOString().split("T")[0]}
+                        required />
+                    </FloatingLabel>
+                  </Col>
+                  <Col md={4}>
+                    <FloatingLabel
+                      controlId="floatingInput"
+                      label="Number Person"
+                    >
+                      <Form.Control type="number" min={1} max={100} placeholder="Number Person" required />
+                    </FloatingLabel>
+                  </Col>
+                  <Col md={3}>
+                    <Button variant="primary" type="submit" className='h-100 w-100 text-uppercase'>
+                      Book Now
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
             </div>
           </Container>
-        </div>
+        </section>
+
+        <section>
+          <Container>
+            <Row className='g-3 py-3 pt-5'>
+              <Col md>
+                <h2>Pawna Lake Camping</h2>
+                <p>
+                  <b>Pawna Camping</b> is the best camping site near Lonavala. 
+                  If you love nature and adventure, you are looking for this combination so, 
+                  <b>Pawna camping</b> is the best option near Lonavala and Pune at starting price Rs. 999. 
+                  Enjoy spending a night beside a bonfire and Pawna lake.<br/>
+                  You can enjoy nature much closer With <b>Pawna Lake Camping</b>, 
+                  you can create a fresh and beautiful memory with your family and friends. 
+                  you can enjoy camping and adventure activities with your loved once.
+                </p>
+                <Button type="button" variant="outline-dark">₹ 999 | BOOK NOW</Button>
+              </Col>
+              <Col md>
+
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
       </main>
       <footer>
 
