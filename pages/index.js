@@ -1,8 +1,12 @@
 import Head from 'next/head';
-import { Container, Row, Col, Form, FloatingLabel, Button } from 'react-bootstrap';
+import { useState } from 'react';
+import { Container, Row, Col, Form, FloatingLabel, Button, InputGroup, Card, Badge } from 'react-bootstrap';
 import NavBar from '../components/navbar';
 
 export default function Home() {
+
+  const [per, setper] = useState(0);
+
   return (
     <div>
       <Head>
@@ -18,11 +22,11 @@ export default function Home() {
             <Container >
               <Row>
                 <Col md={6}>
-                  <p>Full Adventure & close to Nature</p>
-                  <h1>Pawna Camping</h1>
-                  <h4>
+                  <p className='mb-2 text-white text-uppercase'>Full Adventure & close to Nature</p>
+                  <h1 className='mb-2 text-white'>Pawna Camping</h1>
+                  <h5 className='text-white'>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                  </h4>
+                  </h5>
                 </Col>
               </Row>
             </Container>
@@ -31,7 +35,7 @@ export default function Home() {
             <div className='w-100 d-flex justify-content-center'>
               <Form className='homeBookingForm px-4 p-3 bg-white rounded shadow-lg' >
                 <Row className="g-4">
-                  <Col md={5}>
+                  <Col md={4}>
                     <FloatingLabel
                       controlId="floatingInput"
                       label="Booking Date"
@@ -40,13 +44,28 @@ export default function Home() {
                         required />
                     </FloatingLabel>
                   </Col>
-                  <Col md={4}>
-                    <FloatingLabel
-                      controlId="floatingInput"
-                      label="Number Person"
-                    >
-                      <Form.Control type="number" min={1} max={100} placeholder="Number Person" required />
-                    </FloatingLabel>
+                  <Col md={5}>
+                    <InputGroup className="w-100">
+                      <Button className="btn btn-light border border-dark" style={{ "width": "15%" }}
+                        onClick={() => setper(per - 1 >= 0 && per - 1)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                        </svg>
+                      </Button>
+                      <FloatingLabel
+                        controlId="floatingInput"
+                        label="Number Person"
+                        style={{ "width": "70%" }}
+                      >
+                        <Form.Control type="number" value={per} min={1} max={100} placeholder="Number Person" required />
+                      </FloatingLabel>
+                      <Button className="btn btn-light border border-dark" style={{ "width": "15%" }}
+                        onClick={() => setper(per + 1 <= 100 && per + 1)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                        </svg>
+                      </Button>
+                    </InputGroup>
                   </Col>
                   <Col md={3}>
                     <Button variant="primary" type="submit" className='h-100 w-100 text-uppercase'>
@@ -60,23 +79,101 @@ export default function Home() {
         </section>
 
         <section>
-          <Container>
-            <Row className='g-3 py-3 pt-5'>
+          <Container className='d-flex justify-content-center align-items-center' style={{ "minHeight": "70vh" }}>
+            <Row className='g-3 py-5 pt-5'>
               <Col md>
                 <h2>Pawna Lake Camping</h2>
                 <p>
-                  <b>Pawna Camping</b> is the best camping site near Lonavala. 
-                  If you love nature and adventure, you are looking for this combination so, 
-                  <b>Pawna camping</b> is the best option near Lonavala and Pune at starting price Rs. 999. 
-                  Enjoy spending a night beside a bonfire and Pawna lake.<br/>
-                  You can enjoy nature much closer With <b>Pawna Lake Camping</b>, 
-                  you can create a fresh and beautiful memory with your family and friends. 
+                  <b>Pawna Camping</b> is the best camping site near Lonavala.
+                  If you love nature and adventure, you are looking for this combination so,
+                  <b>Pawna camping</b> is the best option near Lonavala and Pune at starting price Rs. 999.
+                  Enjoy spending a night beside a bonfire and Pawna lake.<br />
+                  You can enjoy nature much closer With <b>Pawna Lake Camping</b>,
+                  you can create a fresh and beautiful memory with your family and friends.
                   you can enjoy camping and adventure activities with your loved once.
                 </p>
                 <Button type="button" variant="outline-dark">₹ 999 | BOOK NOW</Button>
               </Col>
               <Col md>
 
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section style={{ "background": "#f8f9fa" }}>
+          <Container className='py-5 d-flex align-items-center' style={{ "minHeight": "85vh" }}>
+            <div>
+              <Row>
+                <Col>
+                  <p className='mb-1'>FIND THE BEST SPOTS</p>
+                  <h2>Our Camp Site</h2>
+                </Col>
+              </Row>
+              <Row xs={1} md={4} className="g-4 pt-4">
+                {Array.from({ length: 4 }).map((_, idx) => (
+                  <Col>
+                    <Card className='shadow'>
+                      <Card.Img variant="top" src="https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75" />
+                      <Card.ImgOverlay className='h-25'>
+                        <Badge pill bg="light" text="dark">
+                          Pawna Camping
+                        </Badge>
+                      </Card.ImgOverlay>
+                      <Card.Body>
+                        <Card.Title>Pawna Camps</Card.Title>
+                        <div className='d-flex justify-content-between align-items-center mb-2'>
+                          <Card.Subtitle>From: ₹999 | 10% Off</Card.Subtitle>
+                          <span>
+                            {Array.from({ length: 4 }).map((_, idx) => (
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffc107" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                              </svg>
+                            ))}
+                          </span>
+                        </div>
+                        <Button type="button" variant="outline-dark">₹ 999 | BOOK NOW</Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </Container>
+        </section>
+
+        <section>
+          <Container className='py-5 d-flex align-items-center flex-wrap' style={{ "minHeight": "85vh" }}>
+            <Row>
+              <Col md={6}>
+                <p className='mb-1'>STAY AND EAT LIKE A LOCAL</p>
+                <h2>Why Choose Us</h2>
+                <p>
+                  Feel like you been stressed out, well you are just one spot away from a
+                  hot spot destination to drain out all your stresses and worries.
+                  What are you waiting for? Make your wheels spin and your legs walk to a very riveting &
+                  spell-bounding destination.. yeah!! Its “Pawna Lake Camping“. The reason you need to step your
+                  feet into the comforting sand of Pawna Lake is that the serenity providing a flow of lake water,
+                  and the melodious sound produced by the chilly breeze. Contact now to book tent for you. Keep
+                  aside your daily stress and enjoy nature and adventure with your family and friends.
+                </p>
+                <Button type="button" variant="outline-dark">Start Exploring</Button>
+              </Col>
+              <Col>
+
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+
+        <section style={{ "backgroundColor": "#003b60", "color": "#fff" }}>
+          <Container className='py-5'>
+            <Row>
+              <Col>
+                <h2>Ready for your next Holidays?</h2>
+                <p>For a booking call | Check Availability. Contact Us</p>
+                <Button type="button" variant="outline-light">CALL +91 9876543210 (24X7)</Button>
               </Col>
             </Row>
           </Container>
