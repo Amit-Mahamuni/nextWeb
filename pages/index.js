@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { Container, Row, Col, Form, FloatingLabel, Button, InputGroup, Card, Badge } from 'react-bootstrap';
 import NavBar from '../components/navbar';
+import FooterSection from '../components/footer';
 
 export default function Home() {
 
@@ -180,9 +181,7 @@ export default function Home() {
         </section>
 
       </main>
-      <footer>
-
-      </footer>
+      <FooterSection />
     </div>
   )
 }

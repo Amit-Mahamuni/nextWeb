@@ -1,10 +1,10 @@
 import { Container, Navbar } from "react-bootstrap";
-import Link from 'next/link'
+import Link from 'next/link';
 import { useState } from "react";
 function NavBar() {
     const [nav, setNav] = useState(false);
     return (
-        <header>
+        <header className="sticky">
             <Navbar bg="light" expand="lg" className="shadow">
                 <Container>
                     <Navbar.Brand><Link href="/">Pawna Camp</Link></Navbar.Brand>

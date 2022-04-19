@@ -9,6 +9,29 @@ body {
   font-weight: 500 !important; */
 }
 
+
+
+footer .socialLink{
+
+  gap:10px;
+}
+footer .socialLink svg{
+  color: #000;
+  font-size: 30px;
+}
+
+footer .footerLink ul li{
+  list-style:disc;
+}
+footer .footerLink li a{
+  color: #000;
+  text-decoration: none;
+}
+
+footer .footerLink li a:hover{
+  text-decoration: underline !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
