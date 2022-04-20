@@ -4,7 +4,7 @@ import { useState } from "react";
 function NavBar() {
     const [nav, setNav] = useState(false);
     return (
-        <header className="sticky">
+        <header className="sticky-top">
             <Navbar bg="light" expand="lg" className="shadow">
                 <Container>
                     <Navbar.Brand><Link href="/">Pawna Camp</Link></Navbar.Brand>

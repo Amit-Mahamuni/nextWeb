@@ -6,7 +6,7 @@ function FooterSection(params) {
         <footer>
             <Container className="pt-5 pb-3">
                 <Row>
-                    <Col md={4}>
+                    <Col md={4} className="pb-4">
                         <h2>Pawna Camping</h2>
                         <p>Best Camping Site in Lonavala.</p>
                         <div className="d-flex justify-content-start align-items-center socialLink">
@@ -32,7 +32,7 @@ function FooterSection(params) {
                             </a>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} className="pb-4">
                         <h4>Contact Us</h4>
                         <ul className="footerLink">
                             <li><a href="tel:+918551891359" >+918551891359 (24x7)</a></li>
@@ -41,7 +41,7 @@ function FooterSection(params) {
                                 target="_blank">Lonavala 410405, Maharashtra, India.</a></li>
                         </ul>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} className="pb-4">
                         <h4>Useful Links</h4>
                         <ul className="footerLink">
                             <li><Link href="/contact"><a>Campsite</a></Link></li>
@@ -50,7 +50,7 @@ function FooterSection(params) {
                             <li><Link href="/contact"><a>FAQ</a></Link></li>
                         </ul>
                     </Col>
-                    <Col md={12} style={{"borderTop":"1px solid #000"}} className="pt-2">
+                    <Col md={12} style={{ "borderTop": "1px solid #000" }} className="pt-2">
                         <p>Copyright © 2019 Pawna Camping</p>
                     </Col>
                 </Row>
