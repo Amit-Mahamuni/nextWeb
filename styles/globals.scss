@@ -1,0 +1,110 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap'); */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    /* font-family: 'Nunito' !important;
+  font-weight: 500 !important; */
+}
+
+
+
+footer {
+    .socialLink{
+        gap: 10px;
+        svg {
+            color: #000;
+            font-size: 30px;
+        }
+    }
+    .footerLink ul li {
+        list-style: disc;
+    }
+    .footerLink li a {
+        color: #000;
+        text-decoration: none;
+    }
+    .footerLink li a:hover {
+        text-decoration: underline !important;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.form-control {
+    border-width: 2px !important;
+    font-weight: 600 !important;
+}
+
+.form-control:hover {
+    border-color: gray !important;
+}
+
+.form-control:focus {
+    border-color: #000 !important;
+    box-shadow: none !important;
+}
+
+.mainBanner {
+    background-image: url("https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75");
+    height: 70vh;
+    min-height: max-content;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+}
+
+/* .mainBannerAfter{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   opacity: .3;
+  background: #000;
+  z-index: 1;
+} */
+
+.mainBanner .container {
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mainBanner h1,
+.mainBanner h4,
+.mainBanner p {
+    color: #ffff;
+    font-weight: 600;
+}
+
+.mainBanner h1 {
+    font-size: 3.5rem;
+}
+
+.homeBookingForm {
+    /* position: absolute;
+bottom: 15%;*/
+    min-width: 55vw;
+    max-width: 90%;
+    margin-top: -50px;
+    z-index: 10;
+}
+
+@media only screen and (max-width: 768px) {
+    /* .homeBookingForm{
+     bottom: -10%;
+    } */
+}
