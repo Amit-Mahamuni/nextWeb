@@ -7,6 +7,31 @@ body {
   /* font-family: 'Nunito' !important;
   font-weight: 500 !important; */ }
 
+.blogBanner {
+  background: #000;
+  color: #fff;
+  min-height: 20vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75"); }
+  .blogBanner::before {
+    min-height: 20vh;
+    opacity: 0.5;
+    color: #000; }
+
+header a {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none !important; }
+  header a:hover {
+    text-decoration: underline !important; }
+
 footer .socialLink {
   gap: 10px; }
   footer .socialLink svg {

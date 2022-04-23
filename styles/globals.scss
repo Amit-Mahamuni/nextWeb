@@ -10,22 +10,57 @@ body {
 }
 
 
+.blogBanner {
+    background: #000;
+    color: #fff;
+    min-height: 20vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75");
+
+    &::before {
+        min-height: 20vh;
+        opacity: 0.5;
+        color: #000;
+    }
+}
+
+header {
+    a {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #000;
+        text-decoration: none !important;
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+}
 
 footer {
-    .socialLink{
+    .socialLink {
         gap: 10px;
+
         svg {
             color: #000;
             font-size: 30px;
         }
     }
+
     .footerLink ul li {
         list-style: disc;
     }
+
     .footerLink li a {
         color: #000;
         text-decoration: none;
     }
+
     .footerLink li a:hover {
         text-decoration: underline !important;
     }
