@@ -32,10 +32,7 @@ function NavBar() {
                                 <Link href="/blogs"><a className="nav-link">Blogs</a></Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/discussions"><a className="nav-link">About</a></Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="/faq"><a className="nav-link">FAQ</a></Link>
+                                <Link href="/about"><a className="nav-link">About</a></Link>
                             </li>
                             <li className="nav-item">
                                 <Link href="/contact"><a className="nav-link">Contact</a></Link>

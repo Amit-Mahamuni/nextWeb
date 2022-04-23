@@ -1,6 +1,7 @@
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import NavBar from '../components/navbar';
 import Head from 'next/head';
+import FooterSection from '../components/footer';
 
 export const getStaticProps = async () => {
     const res = await fetch("https://pawnacamping.in/wp-json/wp/v2/posts")
@@ -21,31 +22,34 @@ export default function Blogs({ data }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <NavBar />
-            <div className="blogBanner">
-                <Container >
-                    <Row >
-                        <Col>
-                            <h1>Blogs</h1>
-                        </Col>
+            <main>
+                <div className="headBanner">
+                    <Container >
+                        <Row >
+                            <Col>
+                                <h1>Blogs</h1>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+                <Container className="py-5">
+                    <Row xs={1} md={3} className="g-4">
+                        {data.map((x) => (
+                            <Col key={x.id}>
+                                <Card className="shadow ">
+                                    <Card.Img variant="top" src="https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75" />
+                                    <Card.Body>
+                                        <Card.Title>{x.title.rendered}</Card.Title>
+                                        {/* <Card.Text dangerouslySetInnerHTML={{ __html: x.excerpt.rendered }}></Card.Text> */}
+                                        <Button variant="outline-dark">Read More</Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
                     </Row>
                 </Container>
-            </div>
-            <Container className="py-5">
-                <Row xs={1} md={3} className="g-4">
-                    {data.map((x) => (
-                        <Col key={x.id}>
-                            <Card >
-                                <Card.Img variant="top" src="https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75" />
-                                <Card.Body>
-                                    <Card.Title>{x.title.rendered}</Card.Title>
-                                    <Card.Text dangerouslySetInnerHTML={{ __html: x.excerpt.rendered }}></Card.Text>
-                                    <Button variant="primary">Read More</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
+            </main>
+            <FooterSection />
         </div>
     )
 }

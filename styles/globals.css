@@ -7,7 +7,8 @@ body {
   /* font-family: 'Nunito' !important;
   font-weight: 500 !important; */ }
 
-.blogBanner {
+.headBanner {
+  position: relative;
   background: #000;
   color: #fff;
   min-height: 20vh;
@@ -19,10 +20,15 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url("https://directory-v2.vercel.app/_next/image?url=%2Fcontent%2Fimg%2Fphoto%2Fphoto-1526392060635-9d6019884377.jpg&w=1080&q=75"); }
-  .blogBanner::before {
-    min-height: 20vh;
-    opacity: 0.5;
-    color: #000; }
+  .headBanner::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    background: #000;
+    z-index: 1;
+    position: absolute; }
 
 header a {
   font-weight: 600;
@@ -32,21 +38,22 @@ header a {
   header a:hover {
     text-decoration: underline !important; }
 
-footer .socialLink {
+.footerLink li {
+  list-style: disc; }
+  .footerLink li a {
+    color: #000;
+    text-decoration: none; }
+    .footerLink li a:hover {
+      text-decoration: underline !important; }
+
+.socialLink {
   gap: 10px; }
-  footer .socialLink svg {
+  .socialLink svg {
     color: #000;
     font-size: 30px; }
 
-footer .footerLink ul li {
-  list-style: disc; }
-
-footer .footerLink li a {
-  color: #000;
-  text-decoration: none; }
-
-footer .footerLink li a:hover {
-  text-decoration: underline !important; }
+footer {
+  border-top: 1px solid #000; }
 
 a {
   color: inherit;

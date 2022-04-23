@@ -57,7 +57,6 @@ function FooterSection(params) {
             </Container>
         </footer>
     )
-
 }
 
 export default FooterSection;
