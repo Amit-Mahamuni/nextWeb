@@ -26,7 +26,7 @@ function NavBar() {
                     <Navbar.Collapse id="navbarScroll" className="justify-content-end">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link href="/mission"><a className="nav-link">Campsite</a></Link>
+                                <Link href="/campsite"><a className="nav-link">Campsite</a></Link>
                             </li>
                             <li className="nav-item">
                                 <Link href="/blogs"><a className="nav-link">Blogs</a></Link>
