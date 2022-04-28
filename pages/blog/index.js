@@ -1,9 +1,10 @@
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
-import NavBar from '../components/navbar';
+import NavBar from '../../components/navbar';
 import Head from 'next/head';
-import FooterSection from '../components/footer';
+import FooterSection from '../../components/footer';
+import Link from 'next/link';
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const res = await fetch("https://pawnacamping.in/wp-json/wp/v2/posts")
     const data = await res.json()
     return {
@@ -41,7 +42,7 @@ export default function Blogs({ data }) {
                                     <Card.Body>
                                         <Card.Title>{x.title.rendered}</Card.Title>
                                         {/* <Card.Text dangerouslySetInnerHTML={{ __html: x.excerpt.rendered }}></Card.Text> */}
-                                        <Button variant="outline-dark">Read More</Button>
+                                        <Link href={"/blog/"+String(x.link).split("/")[3]}><Button variant="outline-dark">Read More</Button></Link>
                                     </Card.Body>
                                 </Card>
                             </Col>

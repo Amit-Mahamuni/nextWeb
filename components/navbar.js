@@ -29,7 +29,7 @@ function NavBar() {
                                 <Link href="/campsite"><a className="nav-link">Campsite</a></Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/blogs"><a className="nav-link">Blogs</a></Link>
+                                <Link href="/blog"><a className="nav-link">Blogs</a></Link>
                             </li>
                             <li className="nav-item">
                                 <Link href="/about"><a className="nav-link">About</a></Link>
