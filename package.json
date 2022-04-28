@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build-css":"node-sass styles/globals.scss styles/globals.css",
+    "build-css": "node-sass styles/globals.scss styles/globals.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\" "
   },
   "dependencies": {
